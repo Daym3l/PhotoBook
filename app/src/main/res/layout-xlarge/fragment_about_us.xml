@@ -1,0 +1,269 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="daym3l.photobook.com.photobook.about.AboutUsActivity">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/background_light">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_fotologo"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:background="@color/colorPrimaryDark"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/png_logo" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="14dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="16dp"
+                android:divider="@android:color/darker_gray"
+                android:orientation="vertical"
+                android:showDividers="middle">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingBottom="12dp">
+
+                    <LinearLayout
+                        android:id="@+id/ll_telf"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal"
+                        android:paddingBottom="8dp"
+                        android:paddingEnd="8dp"
+                        android:paddingStart="8dp">
+
+                        <ImageView
+                            android:id="@+id/iv_call"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginEnd="4dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="3dp"
+                            app:srcCompat="@drawable/ic_call" />
+
+                        <TextView
+                            android:id="@+id/tv_telf"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:fontFamily="sans-serif-condensed"
+                            android:text="@string/telefono"
+                            android:textColor="@color/Sectext"
+                            android:textSize="24sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_ntelf"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="24dp"
+                        android:layout_weight="1"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="@string/telf"
+                        android:textColor="@color/text"
+                        android:textSize="30sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingBottom="12dp">
+
+                    <LinearLayout
+                        android:id="@+id/ll_dir"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal"
+                        android:paddingBottom="8dp"
+                        android:paddingStart="8dp">
+
+                        <ImageView
+                            android:id="@+id/iv_dir"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginEnd="4dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="3dp"
+                            app:srcCompat="@drawable/ic_place" />
+
+                        <TextView
+                            android:id="@+id/tv_dir"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:fontFamily="sans-serif-condensed"
+                            android:text="@string/direcci_n"
+                            android:textColor="@color/Sectext"
+                            android:textSize="24sp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_tdir"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="@string/dir"
+                        android:textColor="@color/text"
+                        android:textSize="30sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingBottom="12dp">
+
+                    <LinearLayout
+                        android:id="@+id/ll_mail"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal"
+                        android:paddingBottom="8dp"
+                        android:paddingStart="8dp">
+
+                        <ImageView
+                            android:id="@+id/iv_mail"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginEnd="4dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="3dp"
+                            app:srcCompat="@drawable/ic_mail" />
+
+                        <TextView
+                            android:id="@+id/tv_mail"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:fontFamily="sans-serif-condensed"
+                            android:text="@string/correot"
+                            android:textColor="@color/Sectext"
+                            android:textSize="24sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_tcorreo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="@string/correo"
+                        android:textColor="@color/text"
+                        android:textSize="30sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingBottom="12dp">
+
+                    <LinearLayout
+                        android:id="@+id/ll_web"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal"
+                        android:paddingBottom="8dp"
+                        android:paddingStart="8dp">
+
+                        <ImageView
+                            android:id="@+id/iv_web"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginEnd="4dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="3dp"
+                            app:srcCompat="@drawable/ic_web" />
+
+                        <TextView
+                            android:id="@+id/tv_web"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_weight="1"
+                            android:fontFamily="sans-serif-condensed"
+                            android:text="@string/web"
+                            android:textColor="@color/Sectext"
+                            android:textSize="24sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_sweb"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="@string/sitio"
+                        android:textColor="@color/text"
+                        android:textSize="30sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/iv_qr"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="24dp"
+                app:srcCompat="@drawable/qr" />
+
+            <TextView
+                android:id="@+id/tv_dev"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed"
+                android:text="Desarrollada por:"
+                android:textAlignment="center"
+                android:textColor="@color/Sectext"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="sans-serif-condensed"
+                android:text="@string/about_us_copy"
+                android:textAlignment="center"
+                android:textColor="@color/text"
+                android:textSize="30sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>
