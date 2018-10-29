@@ -21,7 +21,7 @@
                 android:id="@+id/iv_fotologo"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
-                android:background="@color/colorPrimaryDark"
+                android:background="@color/colorPrimary"
                 android:scaleType="centerCrop"
                 app:srcCompat="@drawable/png_logo" />
 
@@ -58,6 +58,8 @@
                             android:layout_width="14dp"
                             android:layout_height="14dp"
                             android:layout_marginEnd="4dp"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="4dp"
                             android:layout_marginStart="16dp"
                             android:layout_marginTop="1dp"
                             app:srcCompat="@drawable/ic_call" />
@@ -67,6 +69,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
                             android:layout_weight="1"
                             android:fontFamily="sans-serif-condensed"
                             android:text="@string/telefono"
@@ -78,10 +81,33 @@
                         android:id="@+id/tv_ntelf"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
+                        android:layout_marginLeft="24dp"
                         android:layout_marginStart="24dp"
                         android:layout_weight="1"
                         android:fontFamily="sans-serif-condensed"
                         android:text="@string/telf"
+                        android:textColor="@color/text"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="2dp"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="@string/telf1"
+                        android:textColor="@color/text"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="2dp"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="@string/telf2"
                         android:textColor="@color/text"
                         android:textSize="16sp" />
 
@@ -101,6 +127,7 @@
                         android:layout_marginTop="8dp"
                         android:orientation="horizontal"
                         android:paddingBottom="8dp"
+                        android:paddingLeft="8dp"
                         android:paddingStart="8dp">
 
                         <ImageView
@@ -108,6 +135,8 @@
                             android:layout_width="14dp"
                             android:layout_height="14dp"
                             android:layout_marginEnd="4dp"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="4dp"
                             android:layout_marginStart="16dp"
                             android:layout_marginTop="1dp"
                             app:srcCompat="@drawable/ic_place" />
@@ -117,6 +146,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
                             android:layout_weight="1"
                             android:fontFamily="sans-serif-condensed"
                             android:text="@string/direcci_n"
@@ -127,8 +157,9 @@
 
                     <TextView
                         android:id="@+id/tv_tdir"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
                         android:layout_marginStart="24dp"
                         android:fontFamily="sans-serif-condensed"
                         android:text="@string/dir"
@@ -151,6 +182,7 @@
                         android:layout_marginTop="8dp"
                         android:orientation="horizontal"
                         android:paddingBottom="8dp"
+                        android:paddingLeft="8dp"
                         android:paddingStart="8dp">
 
                         <ImageView
@@ -158,6 +190,8 @@
                             android:layout_width="14dp"
                             android:layout_height="14dp"
                             android:layout_marginEnd="4dp"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="4dp"
                             android:layout_marginStart="16dp"
                             android:layout_marginTop="1dp"
                             app:srcCompat="@drawable/ic_mail" />
@@ -167,6 +201,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
                             android:layout_weight="1"
                             android:fontFamily="sans-serif-condensed"
                             android:text="@string/correot"
@@ -178,6 +213,7 @@
                         android:id="@+id/tv_tcorreo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
                         android:layout_marginStart="24dp"
                         android:fontFamily="sans-serif-condensed"
                         android:text="@string/correo"
@@ -199,6 +235,7 @@
                         android:layout_marginTop="8dp"
                         android:orientation="horizontal"
                         android:paddingBottom="8dp"
+                        android:paddingLeft="8dp"
                         android:paddingStart="8dp">
 
                         <ImageView
@@ -206,18 +243,21 @@
                             android:layout_width="14dp"
                             android:layout_height="14dp"
                             android:layout_marginEnd="4dp"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="4dp"
                             android:layout_marginStart="16dp"
                             android:layout_marginTop="1dp"
-                            app:srcCompat="@drawable/ic_web" />
+                            app:srcCompat="@drawable/ic_facebok" />
 
                         <TextView
                             android:id="@+id/tv_web"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="8dp"
+                            android:layout_marginRight="8dp"
                             android:layout_weight="1"
                             android:fontFamily="sans-serif-condensed"
-                            android:text="@string/web"
+                            android:text="@string/face"
                             android:textColor="@color/Sectext"
                             android:textSize="12sp" />
                     </LinearLayout>
@@ -226,9 +266,10 @@
                         android:id="@+id/tv_sweb"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
                         android:layout_marginStart="24dp"
                         android:fontFamily="sans-serif-condensed"
-                        android:text="@string/sitio"
+                        android:text="@string/facebook"
                         android:textColor="@color/text"
                         android:textSize="16sp" />
 
@@ -250,7 +291,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-condensed"
-                android:text="Desarrollada por:"
+                android:text="@string/desarrollada_por"
                 android:textAlignment="center"
                 android:textColor="@color/Sectext"
                 android:textSize="14sp" />
@@ -259,12 +300,110 @@
                 android:id="@+id/textView6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="8dp"
                 android:fontFamily="sans-serif-condensed"
                 android:text="@string/about_us_copy"
                 android:textAlignment="center"
                 android:textColor="@color/text"
                 android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="4dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_toLeftOf="@+id/roundedImageView"
+                        android:layout_toStartOf="@+id/roundedImageView"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="Desarrollador"
+                        android:textColor="@color/secondary_text"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="4dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_toLeftOf="@+id/roundedImageView"
+                        android:layout_toStartOf="@+id/roundedImageView"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="daymel537@gmail.com"
+                        android:textColor="@color/primary_text"
+                        android:textSize="12sp" />
+
+                    <daym3l.photobook.com.photobook.utils.RoundedImageView
+                        android:id="@+id/roundedImageView"
+                        android:layout_width="50dp"
+
+                        android:layout_height="50dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginRight="4dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/avatar" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/textView7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_toEndOf="@+id/roundedImageView2"
+                        android:layout_toRightOf="@+id/roundedImageView2"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="Esp. Marketing"
+                        android:textColor="@color/secondary_text"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/textView9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_toEndOf="@+id/roundedImageView2"
+                        android:layout_toRightOf="@+id/roundedImageView2"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="arcecarlos1@gmail.com"
+                        android:textColor="@color/primary_text"
+                        android:textSize="12sp" />
+
+                    <daym3l.photobook.com.photobook.utils.RoundedImageView
+                        android:id="@+id/roundedImageView2"
+                        android:layout_width="50dp"
+
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/avatar" />
+                </RelativeLayout>
+
+            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>

@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 import daym3l.photobook.com.photobook.R;
+import daym3l.photobook.com.photobook.utils._Permision;
+import me.drakeet.materialdialog.MaterialDialog;
 
 public class AboutUsActivity extends AppCompatActivity {
 
@@ -38,7 +40,7 @@ public class AboutUsActivity extends AppCompatActivity {
         direccion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                mostrarDireccion();
             }
         });
     }
@@ -55,8 +57,15 @@ public class AboutUsActivity extends AppCompatActivity {
     }
 
     private void marcarNumero() {
-
-        startActivity(new Intent("android.intent.action.CALL", Uri.parse("tel:" + getString(R.string.telf))));
+        if (_Permision.checkPermiso(AboutUsActivity.this))
+            startActivity(new Intent("android.intent.action.CALL", Uri.parse("tel:" + getString(R.string.telf))));
     }
 
+    private void mostrarDireccion() {
+        MaterialDialog materialDialog = new MaterialDialog(AboutUsActivity.this)
+                .setTitle("Estamos Aquí")
+                .setCanceledOnTouchOutside(true)
+                .setContentView(R.layout.dir_layout);
+        materialDialog.show();
+    }
 }

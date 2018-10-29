@@ -2,6 +2,7 @@ package daym3l.photobook.com.photobook;
 
 import android.content.Intent;
 
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -15,7 +16,6 @@ import daym3l.photobook.com.photobook.about.AboutUsActivity;
 import daym3l.photobook.com.photobook.album.Album;
 
 
-
 public class PortadaActivity extends AppCompatActivity {
 
 
@@ -27,12 +27,15 @@ public class PortadaActivity extends AppCompatActivity {
 
         ImageView portada = (ImageView) findViewById(R.id.iv_backGround);
         ImageView logo = (ImageView) findViewById(R.id.frameLayout);
+        FloatingActionButton initAlbum = (FloatingActionButton) findViewById(R.id.fab_gotoalbum);
         portada.setScaleX((float) 1.1);
         portada.setScaleY((float) 1.1);
 
         final Animation myAnim = AnimationUtils.loadAnimation(this, R.anim.bounce);
+        final Animation fab_myAnim = AnimationUtils.loadAnimation(this, R.anim.clockwise);
 
 
+        initAlbum.startAnimation(fab_myAnim);
         portada.startAnimation(myAnim);
 
         logo.setOnClickListener(new View.OnClickListener() {
@@ -42,7 +45,7 @@ public class PortadaActivity extends AppCompatActivity {
             }
         });
 
-        portada.setOnClickListener(new View.OnClickListener() {
+        initAlbum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 gotoAlbum();

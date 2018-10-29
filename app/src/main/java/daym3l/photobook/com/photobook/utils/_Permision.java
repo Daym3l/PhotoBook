@@ -22,7 +22,7 @@ public class _Permision {
         int permisoCheck = ContextCompat.checkSelfPermission(activity, Manifest.permission.INTERNET);
         int permisoCheck2 = ContextCompat.checkSelfPermission(activity, Manifest.permission.READ_EXTERNAL_STORAGE);
         int permisoCheck3 = ContextCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE);
-////        int permisoCheck4 = ContextCompat.checkSelfPermission(activity, Manifest.permission.READ_SMS);
+        int permisoCheck4 = ContextCompat.checkSelfPermission(activity, Manifest.permission.CALL_PHONE);
 //        int permisoCheck5 = ContextCompat.checkSelfPermission(activity, Manifest.permission.READ_CONTACTS);
 //        int permisoCheck6 = ContextCompat.checkSelfPermission(activity, Manifest.permission.READ_CALL_LOG);
 
@@ -42,9 +42,9 @@ public class _Permision {
         if (permisoCheck2 != PackageManager.PERMISSION_GRANTED) {
             lista_permisos.add(Manifest.permission.WRITE_EXTERNAL_STORAGE);
         }
-//        if (permisoCheck4 != PackageManager.PERMISSION_GRANTED) {
-//            lista_permisos.add(Manifest.permission.READ_SMS);
-//        }
+        if (permisoCheck4 != PackageManager.PERMISSION_GRANTED) {
+            lista_permisos.add(Manifest.permission.CALL_PHONE);
+        }
 //        if (permisoCheck6 != PackageManager.PERMISSION_GRANTED) {
 //            lista_permisos.add(Manifest.permission.READ_CALL_LOG);
 //        }

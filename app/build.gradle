@@ -5,11 +5,11 @@ android {
     buildToolsVersion '25.0.2'
     defaultConfig {
         vectorDrawables.useSupportLibrary = true
-        applicationId "daym3l.photobook.com.photobook"
+        applicationId "daym3l.photobook.com.luna"
         minSdkVersion 16
         targetSdkVersion 25
-        versionCode 100
-        versionName "1.0.0"
+        versionCode 101
+        versionName "1.0.1_Luna"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

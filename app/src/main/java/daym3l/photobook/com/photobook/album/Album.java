@@ -86,7 +86,7 @@ public class Album extends AppCompatActivity implements PopupMenu.OnMenuItemClic
         AndroidImageAdapter adapterView = new AndroidImageAdapter(this);
         mViewPager.setAdapter(adapterView);
 
-        mViewPager.setPageTransformer(true, fadeOutTransformation);
+        mViewPager.setPageTransformer(true, cubeInScalingTransformation);
         setImagesData();
         inflateThumbnails();
 

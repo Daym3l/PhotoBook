@@ -16,7 +16,8 @@ public class _ImagesConst {
             R.drawable.image17, R.drawable.image18, R.drawable.image19,
             R.drawable.image20, R.drawable.image21, R.drawable.image22, R.drawable.image23,
             R.drawable.image24, R.drawable.image25, R.drawable.image26, R.drawable.image27,
-            R.drawable.image28, R.drawable.image29, R.drawable.image30, R.drawable.image31, R.drawable.image32
+            R.drawable.image28, R.drawable.image29, R.drawable.image30, R.drawable.image31, R.drawable.image32,
+            R.drawable.image33, R.drawable.image34, R.drawable.image35
 
     };
 }
