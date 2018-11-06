@@ -30,3 +30,15 @@ proguard/
 
 # Android Studio captures folder
 captures/
+
+gradle\.properties
+
+app/src/main/res/xml/provider_paths\.xml
+
+app/src/main/AndroidManifest\.xml
+
+app/libs/MaterialDialogs/
+
+\.idea/
+
+app/app\.iml
