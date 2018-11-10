@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Environment;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.FileProvider;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -30,6 +31,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import daym3l.photobook.com.photobook.BuildConfig;
 import daym3l.photobook.com.photobook.R;
 
 import daym3l.photobook.com.photobook.about.AboutUsActivity;
@@ -118,6 +120,7 @@ public class Album extends AppCompatActivity implements PopupMenu.OnMenuItemClic
 
         image.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
         File f = new File(Environment.getExternalStorageDirectory() + File.separator + "temporary_file.jpg");
+        String fileP = Environment.getExternalStorageDirectory() + File.separator + "temporary_file.jpg";
         try {
             f.createNewFile();
             FileOutputStream fo = new FileOutputStream(f);
@@ -125,7 +128,8 @@ public class Album extends AppCompatActivity implements PopupMenu.OnMenuItemClic
         } catch (IOException e) {
             e.printStackTrace();
         }
-        shareIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse("file:///sdcard/temporary_file.jpg"));
+        Uri uri = FileProvider.getUriForFile(Album.this, BuildConfig.APPLICATION_ID + ".provider",f );
+        shareIntent.putExtra(Intent.EXTRA_STREAM, uri);
         startActivity(Intent.createChooser(shareIntent, "Compartir con:"));
     }
 
