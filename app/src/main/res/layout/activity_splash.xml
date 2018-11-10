@@ -53,7 +53,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="8dp"
-        app:inner_text="Ver fotos"
+        app:inner_text="@string/fot"
         app:inner_text_color="@android:color/white"
         app:inner_text_background="@drawable/shape_rounded"
         app:inner_text_size="16dp"
