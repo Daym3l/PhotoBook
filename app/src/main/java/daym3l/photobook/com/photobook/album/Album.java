@@ -1,9 +1,11 @@
 package daym3l.photobook.com.photobook.album;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Environment;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.FragmentTransaction;
@@ -53,6 +55,7 @@ public class Album extends AppCompatActivity implements PopupMenu.OnMenuItemClic
     private ViewPager mViewPager;
     private FrameLayout fThumbs;
     private ImageView share, menuOption;
+
     CubeInRotationTransformation cubeInRotationTransformation;
     CubeInScalingTransformation cubeInScalingTransformation;
     CubeInDepthTransformation cubeInDepthTransformation;
@@ -66,6 +69,21 @@ public class Album extends AppCompatActivity implements PopupMenu.OnMenuItemClic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_album);
+
+        RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.rl_container);
+        fThumbs = (FrameLayout) findViewById(R.id.frame_thumb);
+
+        relativeLayout.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
+            @Override
+            public void onLayoutChange(View v, int left, int top, int right, int bottom, int oldLeft, int oldTop, int oldRight, int oldBottom) {
+                int orientacion = getResources().getConfiguration().orientation;
+                if (orientacion == Configuration.ORIENTATION_LANDSCAPE) {
+                    fThumbs.setVisibility(View.GONE);
+                } else {
+                    fThumbs.setVisibility(View.VISIBLE);
+                }
+            }
+        });
 
         cubeInRotationTransformation = new CubeInRotationTransformation();
         cubeInScalingTransformation = new CubeInScalingTransformation();
@@ -120,7 +138,7 @@ public class Album extends AppCompatActivity implements PopupMenu.OnMenuItemClic
 
         image.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
         File f = new File(Environment.getExternalStorageDirectory() + File.separator + "temporary_file.jpg");
-        String fileP = Environment.getExternalStorageDirectory() + File.separator + "temporary_file.jpg";
+
         try {
             f.createNewFile();
             FileOutputStream fo = new FileOutputStream(f);
@@ -128,8 +146,13 @@ public class Album extends AppCompatActivity implements PopupMenu.OnMenuItemClic
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Uri uri = FileProvider.getUriForFile(Album.this, BuildConfig.APPLICATION_ID + ".provider",f );
-        shareIntent.putExtra(Intent.EXTRA_STREAM, uri);
+        if (Build.VERSION.SDK_INT <= 25) {
+            shareIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse("file:///sdcard/temporary_file.jpg"));
+        } else {
+            Uri uri = FileProvider.getUriForFile(Album.this, BuildConfig.APPLICATION_ID + ".provider", f);
+            shareIntent.putExtra(Intent.EXTRA_STREAM, uri);
+        }
+
         startActivity(Intent.createChooser(shareIntent, "Compartir con:"));
     }
 

@@ -10,6 +10,7 @@ import android.widget.ImageView;
 
 import daym3l.photobook.com.photobook.R;
 import daym3l.photobook.com.photobook.utils._ImagesConst;
+import uk.co.senab.photoview.PhotoView;
 
 /**
  * Created by Daymel on 16/9/2018.
@@ -31,17 +32,17 @@ public class AndroidImageAdapter extends PagerAdapter {
 
     @Override
     public boolean isViewFromObject(View v, Object obj) {
-        return v == ((ImageView) obj);
+        return v == ((PhotoView) obj);
     }
 
     @Override
     public Object instantiateItem(ViewGroup container, int i) {
-        ImageView mImageView = new ImageView(mContext);
-        mImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        mImageView.setBackgroundColor(Color.parseColor("#282828"));
-        mImageView.setImageResource(sliderImagesId[i]);
-        ((ViewPager) container).addView(mImageView, 0);
-        return mImageView;
+        PhotoView photoView = new PhotoView(mContext);
+        photoView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        photoView.setBackgroundColor(Color.parseColor("#282828"));
+        photoView.setImageResource(sliderImagesId[i]);
+        ((ViewPager) container).addView(photoView, 0);
+        return photoView;
     }
 
     @Override
