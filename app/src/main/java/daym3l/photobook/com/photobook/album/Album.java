@@ -1,9 +1,11 @@
 package daym3l.photobook.com.photobook.album;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
@@ -16,6 +18,7 @@ import android.os.Bundle;
 
 import android.support.v7.widget.PopupMenu;
 import android.transition.TransitionManager;
+import android.util.Log;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -56,6 +59,7 @@ public class Album extends AppCompatActivity implements PopupMenu.OnMenuItemClic
     private FrameLayout fThumbs;
     private ImageView share, menuOption;
 
+
     CubeInRotationTransformation cubeInRotationTransformation;
     CubeInScalingTransformation cubeInScalingTransformation;
     CubeInDepthTransformation cubeInDepthTransformation;
@@ -69,6 +73,7 @@ public class Album extends AppCompatActivity implements PopupMenu.OnMenuItemClic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_album);
+        final int[] sliderImagesId = _ImagesConst.IMAGES_SLIDER;
 
         RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.rl_container);
         fThumbs = (FrameLayout) findViewById(R.id.frame_thumb);
@@ -109,6 +114,34 @@ public class Album extends AppCompatActivity implements PopupMenu.OnMenuItemClic
         mViewPager.setPageTransformer(true, cubeInScalingTransformation);
         setImagesData();
         inflateThumbnails();
+
+        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                BitmapDrawable bd = (BitmapDrawable) Album.this.getResources().getDrawable(sliderImagesId[position]);
+                double imageHeight = bd.getBitmap().getHeight();
+                double imageWidth = bd.getBitmap().getWidth();
+                Log.i("H",String.valueOf(imageHeight));
+                Log.i("W",String.valueOf(imageWidth));
+                if(imageWidth>imageHeight){
+                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+                }else {
+                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+                }
+
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
 
         share.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -182,6 +215,7 @@ public class Album extends AppCompatActivity implements PopupMenu.OnMenuItemClic
             thumbnailsContainer.addView(imageLayout);
         }
     }
+
 
     private View.OnClickListener onChagePageClickListener(final int i) {
         return new View.OnClickListener() {
