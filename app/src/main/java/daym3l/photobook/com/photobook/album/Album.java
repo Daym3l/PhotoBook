@@ -1,18 +1,24 @@
 package daym3l.photobook.com.photobook.album;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Environment;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.FileProvider;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import android.support.v7.widget.PopupMenu;
 import android.transition.TransitionManager;
+import android.util.Log;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -30,6 +36,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import daym3l.photobook.com.photobook.BuildConfig;
 import daym3l.photobook.com.photobook.R;
 
 import daym3l.photobook.com.photobook.about.AboutUsActivity;
@@ -51,6 +58,8 @@ public class Album extends AppCompatActivity implements PopupMenu.OnMenuItemClic
     private ViewPager mViewPager;
     private FrameLayout fThumbs;
     private ImageView share, menuOption;
+
+
     CubeInRotationTransformation cubeInRotationTransformation;
     CubeInScalingTransformation cubeInScalingTransformation;
     CubeInDepthTransformation cubeInDepthTransformation;
@@ -64,6 +73,22 @@ public class Album extends AppCompatActivity implements PopupMenu.OnMenuItemClic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_album);
+        final int[] sliderImagesId = _ImagesConst.IMAGES_SLIDER;
+
+        RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.rl_container);
+        fThumbs = (FrameLayout) findViewById(R.id.frame_thumb);
+
+        relativeLayout.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
+            @Override
+            public void onLayoutChange(View v, int left, int top, int right, int bottom, int oldLeft, int oldTop, int oldRight, int oldBottom) {
+                int orientacion = getResources().getConfiguration().orientation;
+                if (orientacion == Configuration.ORIENTATION_LANDSCAPE) {
+                    fThumbs.setVisibility(View.GONE);
+                } else {
+                    fThumbs.setVisibility(View.VISIBLE);
+                }
+            }
+        });
 
         cubeInRotationTransformation = new CubeInRotationTransformation();
         cubeInScalingTransformation = new CubeInScalingTransformation();
@@ -89,6 +114,32 @@ public class Album extends AppCompatActivity implements PopupMenu.OnMenuItemClic
         mViewPager.setPageTransformer(true, cubeInScalingTransformation);
         setImagesData();
         inflateThumbnails();
+
+        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                BitmapDrawable bd = (BitmapDrawable) Album.this.getResources().getDrawable(sliderImagesId[position]);
+                double imageHeight = bd.getBitmap().getHeight();
+                double imageWidth = bd.getBitmap().getWidth();
+                if(imageWidth>imageHeight){
+                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+                }else {
+                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+                }
+
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
 
         share.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -118,6 +169,7 @@ public class Album extends AppCompatActivity implements PopupMenu.OnMenuItemClic
 
         image.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
         File f = new File(Environment.getExternalStorageDirectory() + File.separator + "temporary_file.jpg");
+
         try {
             f.createNewFile();
             FileOutputStream fo = new FileOutputStream(f);
@@ -125,7 +177,14 @@ public class Album extends AppCompatActivity implements PopupMenu.OnMenuItemClic
         } catch (IOException e) {
             e.printStackTrace();
         }
-        shareIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse("file:///sdcard/temporary_file.jpg"));
+        if (Build.VERSION.SDK_INT <= 25) {
+            shareIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse("file:///sdcard/temporary_file.jpg"));
+        } else {
+            Uri contentUri = FileProvider.getUriForFile(Album.this, "daym3l.photobook.com.fileProvider", f);
+//            Uri uri = FileProvider.getUriForFile(Album.this, BuildConfig.APPLICATION_ID + ".provider", f);
+            shareIntent.putExtra(Intent.EXTRA_STREAM, contentUri);
+        }
+
         startActivity(Intent.createChooser(shareIntent, "Compartir con:"));
     }
 
@@ -155,6 +214,7 @@ public class Album extends AppCompatActivity implements PopupMenu.OnMenuItemClic
             thumbnailsContainer.addView(imageLayout);
         }
     }
+
 
     private View.OnClickListener onChagePageClickListener(final int i) {
         return new View.OnClickListener() {

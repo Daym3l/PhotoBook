@@ -12,6 +12,9 @@ import android.view.animation.AnimationUtils;
 
 import android.widget.ImageView;
 
+import com.ebanx.swipebtn.OnStateChangeListener;
+import com.ebanx.swipebtn.SwipeButton;
+
 import daym3l.photobook.com.photobook.about.AboutUsActivity;
 import daym3l.photobook.com.photobook.album.Album;
 
@@ -27,15 +30,15 @@ public class PortadaActivity extends AppCompatActivity {
 
         ImageView portada = (ImageView) findViewById(R.id.iv_backGround);
         ImageView logo = (ImageView) findViewById(R.id.frameLayout);
-        FloatingActionButton initAlbum = (FloatingActionButton) findViewById(R.id.fab_gotoalbum);
+
+        SwipeButton initAlbum = (SwipeButton) findViewById(R.id.swbtn_init);
         portada.setScaleX((float) 1.1);
         portada.setScaleY((float) 1.1);
 
         final Animation myAnim = AnimationUtils.loadAnimation(this, R.anim.bounce);
-        final Animation fab_myAnim = AnimationUtils.loadAnimation(this, R.anim.clockwise);
 
 
-        initAlbum.startAnimation(fab_myAnim);
+
         portada.startAnimation(myAnim);
 
         logo.setOnClickListener(new View.OnClickListener() {
@@ -45,14 +48,14 @@ public class PortadaActivity extends AppCompatActivity {
             }
         });
 
-        initAlbum.setOnClickListener(new View.OnClickListener() {
+        initAlbum.setOnStateChangeListener(new OnStateChangeListener() {
             @Override
-            public void onClick(View v) {
-                gotoAlbum();
-
+            public void onStateChange(boolean b) {
+                if (b) {
+                    gotoAlbum();
+                }
             }
         });
-
     }
 
     private void gotoAlbum() {
