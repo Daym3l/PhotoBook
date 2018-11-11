@@ -36,7 +36,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <provider
             android:name="android.support.v4.content.FileProvider"
-            android:authorities="daym3l.photobook.com.fileProvider"
+            android:authorities="daym3l.photobook.com.nexus_promo.fileProvider"
             android:grantUriPermissions="true"
             android:exported="false">
             <meta-data

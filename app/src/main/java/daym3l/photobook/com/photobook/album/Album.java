@@ -180,7 +180,7 @@ public class Album extends AppCompatActivity implements PopupMenu.OnMenuItemClic
         if (Build.VERSION.SDK_INT <= 25) {
             shareIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse("file:///sdcard/temporary_file.jpg"));
         } else {
-            Uri contentUri = FileProvider.getUriForFile(Album.this, "daym3l.photobook.com.fileProvider", f);
+            Uri contentUri = FileProvider.getUriForFile(Album.this, "daym3l.photobook.com.nexus_promo.fileProvider", f);
 //            Uri uri = FileProvider.getUriForFile(Album.this, BuildConfig.APPLICATION_ID + ".provider", f);
             shareIntent.putExtra(Intent.EXTRA_STREAM, contentUri);
         }
