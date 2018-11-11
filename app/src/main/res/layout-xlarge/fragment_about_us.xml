@@ -100,17 +100,6 @@
                         android:textColor="@color/text"
                         android:textSize="30sp" />
 
-                    <TextView
-                        android:id="@+id/textView4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="24dp"
-                        android:layout_marginTop="8dp"
-                        android:fontFamily="sans-serif-condensed"
-                        android:text="@string/telf2"
-                        android:textColor="@color/text"
-                        android:textSize="30sp" />
-
                 </LinearLayout>
 
                 <LinearLayout
@@ -313,92 +302,14 @@
                 android:layout_marginBottom="16dp"
                 android:orientation="horizontal">
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1">
-
-                    <TextView
-                        android:id="@+id/textView5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentTop="true"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginRight="4dp"
-                        android:layout_marginTop="6dp"
-                        android:layout_toLeftOf="@+id/roundedImageView"
-                        android:layout_toStartOf="@+id/roundedImageView"
-                        android:fontFamily="sans-serif-condensed"
-                        android:text="Desarrollador"
-                        android:textColor="@color/secondary_text"
-                        android:textSize="24sp" />
-
-                    <TextView
-                        android:id="@+id/textView8"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="sans-serif-condensed"
-                        android:text="daymel537@gmail.com"
-                        android:textColor="@color/primary_text"
-                        android:textSize="24sp"
-                        android:layout_below="@+id/textView5"
-                        android:layout_toLeftOf="@+id/roundedImageView"
-                        android:layout_toStartOf="@+id/roundedImageView" />
-
-                    <daym3l.photobook.com.photobook.utils.RoundedImageView
-                        android:id="@+id/roundedImageView"
-                        android:layout_width="80dp"
-
-                        android:layout_height="80dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignParentTop="true"
-                        android:layout_marginRight="4dp"
-                        android:layout_weight="1"
-                        app:srcCompat="@drawable/avatar" />
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1">
-
-                    <TextView
-                        android:id="@+id/textView7"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentTop="true"
-                        android:layout_marginLeft="4dp"
-                        android:layout_marginTop="6dp"
-                        android:layout_toEndOf="@+id/roundedImageView2"
-                        android:layout_toRightOf="@+id/roundedImageView2"
-                        android:fontFamily="sans-serif-condensed"
-                        android:text="Esp. Marketing"
-                        android:textColor="@color/secondary_text"
-                        android:textSize="24sp" />
-
-                    <TextView
-                        android:id="@+id/textView9"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="sans-serif-condensed"
-                        android:text="arcecarlos1@gmail.com"
-                        android:textColor="@color/primary_text"
-                        android:textSize="24sp"
-                        android:layout_below="@+id/textView7"
-                        android:layout_alignLeft="@+id/textView7"
-                        android:layout_alignStart="@+id/textView7" />
-
-                    <daym3l.photobook.com.photobook.utils.RoundedImageView
-                        android:id="@+id/roundedImageView2"
-                        android:layout_width="80dp"
-
-                        android:layout_height="80dp"
-                        android:layout_marginLeft="4dp"
-                        android:layout_weight="1"
-                        app:srcCompat="@drawable/avatar" />
-                </RelativeLayout>
-
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/desarrollada_correo"
+                    android:textAlignment="center"
+                    android:textSize="30sp" />
             </LinearLayout>
 
         </LinearLayout>

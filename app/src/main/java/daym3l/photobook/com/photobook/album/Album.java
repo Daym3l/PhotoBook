@@ -126,8 +126,6 @@ public class Album extends AppCompatActivity implements PopupMenu.OnMenuItemClic
                 BitmapDrawable bd = (BitmapDrawable) Album.this.getResources().getDrawable(sliderImagesId[position]);
                 double imageHeight = bd.getBitmap().getHeight();
                 double imageWidth = bd.getBitmap().getWidth();
-                Log.i("H",String.valueOf(imageHeight));
-                Log.i("W",String.valueOf(imageWidth));
                 if(imageWidth>imageHeight){
                     setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
                 }else {
@@ -182,8 +180,9 @@ public class Album extends AppCompatActivity implements PopupMenu.OnMenuItemClic
         if (Build.VERSION.SDK_INT <= 25) {
             shareIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse("file:///sdcard/temporary_file.jpg"));
         } else {
-            Uri uri = FileProvider.getUriForFile(Album.this, BuildConfig.APPLICATION_ID + ".provider", f);
-            shareIntent.putExtra(Intent.EXTRA_STREAM, uri);
+            Uri contentUri = FileProvider.getUriForFile(Album.this, "daym3l.photobook.com.fileProvider", f);
+//            Uri uri = FileProvider.getUriForFile(Album.this, BuildConfig.APPLICATION_ID + ".provider", f);
+            shareIntent.putExtra(Intent.EXTRA_STREAM, contentUri);
         }
 
         startActivity(Intent.createChooser(shareIntent, "Compartir con:"));
