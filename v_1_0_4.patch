@@ -1,0 +1,415 @@
+Index: app/src/main/java/daym3l/photobook/com/photobook/PortadaActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/daym3l/photobook/com/photobook/PortadaActivity.java	(date 1542332250000)
++++ app/src/main/java/daym3l/photobook/com/photobook/PortadaActivity.java	(revision )
+@@ -12,8 +12,11 @@
+ 
+ import android.widget.ImageView;
+ 
+-import com.ebanx.swipebtn.OnStateChangeListener;
+-import com.ebanx.swipebtn.SwipeButton;
++import com.easyandroidanimations.library.AnimationListener;
++import com.easyandroidanimations.library.BounceAnimation;
++import com.easyandroidanimations.library.PuffInAnimation;
++import com.easyandroidanimations.library.PuffOutAnimation;
++import com.easyandroidanimations.library.SlideInAnimation;
+ 
+ import daym3l.photobook.com.photobook.about.AboutUsActivity;
+ import daym3l.photobook.com.photobook.album.Album;
+@@ -29,33 +32,48 @@
+ 
+ 
+         ImageView portada = (ImageView) findViewById(R.id.iv_backGround);
+-        ImageView logo = (ImageView) findViewById(R.id.frameLayout);
+-
+-        SwipeButton initAlbum = (SwipeButton) findViewById(R.id.swbtn_init);
++        final ImageView logo = (ImageView) findViewById(R.id.frameLayout);
++        logo.setVisibility(View.INVISIBLE);
++        final FloatingActionButton initAlbum = (FloatingActionButton) findViewById(R.id.fab_gotoalbum);
+         portada.setScaleX((float) 1.1);
+         portada.setScaleY((float) 1.1);
+ 
+         final Animation myAnim = AnimationUtils.loadAnimation(this, R.anim.bounce);
+ 
++        final SlideInAnimation slideInAnimation = new SlideInAnimation(logo);
+ 
++        PuffInAnimation puffInAnimation = new PuffInAnimation(initAlbum).setListener(new AnimationListener() {
++            @Override
++            public void onAnimationEnd(com.easyandroidanimations.library.Animation animation) {
++                logo.setVisibility(View.VISIBLE);
++                slideInAnimation.animate();
++            }
++        });
++        puffInAnimation.animate();
+ 
++
+         portada.startAnimation(myAnim);
+ 
+-        logo.setOnClickListener(new View.OnClickListener() {
++
++        ;
++
++        initAlbum.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+-                gotoAlbum();
+-            }
+-        });
+ 
+-        initAlbum.setOnStateChangeListener(new OnStateChangeListener() {
++                new PuffOutAnimation(initAlbum)
++                        .setListener(new AnimationListener() {
+-            @Override
++                            @Override
+-            public void onStateChange(boolean b) {
+-                if (b) {
++                            public void onAnimationEnd(com.easyandroidanimations.library.Animation animation) {
+-                    gotoAlbum();
+-                }
++                                gotoAlbum();
++                            }
++                        })
++                        .animate();
++
++
+             }
+         });
++
+     }
+ 
+     private void gotoAlbum() {
+Index: app/src/main/java/daym3l/photobook/com/photobook/about/DirectionFragment.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/daym3l/photobook/com/photobook/about/DirectionFragment.java	(revision )
++++ app/src/main/java/daym3l/photobook/com/photobook/about/DirectionFragment.java	(revision )
+@@ -0,0 +1,34 @@
++package daym3l.photobook.com.photobook.about;
++
++
++import android.os.Bundle;
++import android.support.v4.app.Fragment;
++import android.view.LayoutInflater;
++import android.view.View;
++import android.view.ViewGroup;
++
++import daym3l.photobook.com.photobook.R;
++import uk.co.senab.photoview.PhotoView;
++
++/**
++ * A simple {@link Fragment} subclass.
++ */
++public class DirectionFragment extends Fragment {
++
++
++    public DirectionFragment() {
++        // Required empty public constructor
++    }
++
++
++    @Override
++    public View onCreateView(LayoutInflater inflater, ViewGroup container,
++                             Bundle savedInstanceState) {
++        // Inflate the layout for this fragment
++        View v = inflater.inflate(R.layout.fragment_direction, container, false);
++        PhotoView photoView = (PhotoView) v.findViewById(R.id.image);
++        photoView.setImageResource(R.drawable.direccion);
++        return v;
++    }
++
++}
+Index: app/src/main/res/layout-xlarge/activity_splash.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout-xlarge/activity_splash.xml	(date 1542332250000)
++++ app/src/main/res/layout-xlarge/activity_splash.xml	(revision )
+@@ -45,36 +45,22 @@
+         tools:layout_constraintLeft_creator="1"
+         tools:layout_constraintTop_creator="1" />
+ 
+-
+-    <com.ebanx.swipebtn.SwipeButton
+-        android:id="@+id/swbtn_init"
+-        android:layout_width="400dp"
++    <android.support.design.widget.FloatingActionButton
++        android:id="@+id/fab_gotoalbum"
++        android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+-        android:layout_marginBottom="24dp"
+-        android:layout_marginLeft="50dp"
+-        android:layout_marginRight="50dp"
++        android:layout_marginBottom="8dp"
++        android:layout_marginLeft="8dp"
++        android:layout_marginRight="8dp"
+         android:layout_marginTop="8dp"
++        android:clickable="true"
++        app:backgroundTint="@color/colorPrimary"
++        app:fabSize="normal"
++        app:layout_constraintBottom_toBottomOf="@+id/iv_backGround"
+         app:layout_constraintLeft_toLeftOf="parent"
+         app:layout_constraintRight_toRightOf="parent"
+-        app:inner_text="@string/fot"
+-        app:inner_text_color="@android:color/white"
+-        app:inner_text_background="@drawable/shape_rounded"
+-        app:inner_text_size="16dp"
+-        app:inner_text_bottom_padding="18dp"
+-        app:inner_text_top_padding="18dp"
+-        app:layout_constraintBottom_toBottomOf="@+id/iv_backGround"
+         app:layout_constraintTop_toBottomOf="@+id/frameLayout"
+-        app:button_image_height="60dp"
+-        app:button_image_width="60dp"
+-        app:button_left_padding="20dp"
+-        app:button_right_padding="20dp"
+-        app:button_top_padding="20dp"
+-        app:button_bottom_padding="20dp"
+-        app:button_background="@drawable/shape_button"
+-        app:button_image_disabled="@drawable/arrow"
+-        app:button_image_enabled="@drawable/happy"
+-
+-       />
++        app:srcCompat="@drawable/ic_halloween_black_cat" />
+ 
+ 
+ </android.support.constraint.ConstraintLayout>
+Index: app/src/main/res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/values/strings.xml	(date 1542332250000)
++++ app/src/main/res/values/strings.xml	(revision )
+@@ -25,5 +25,6 @@
+     <string name="desarrollada_por">Desarrollada por:</string>
+     <string name="desarrollada_correo">softnexus537@gmail.com</string>
+     <string name="fot">VER FOTOS</string>
++    <string name="estamos_aqu">Estamos aquí</string>
+ 
+ </resources>
+Index: app/src/main/res/layout/fragment_about_us.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/fragment_about_us.xml	(date 1542332250000)
++++ app/src/main/res/layout/fragment_about_us.xml	(revision )
+@@ -1,6 +1,7 @@
+ <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res-auto"
+     xmlns:tools="http://schemas.android.com/tools"
++    android:id="@+id/fr_about"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     tools:context="daym3l.photobook.com.photobook.about.AboutUsActivity">
+Index: app/src/main/res/values/colors.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/values/colors.xml	(date 1542332250000)
++++ app/src/main/res/values/colors.xml	(revision )
+@@ -13,6 +13,6 @@
+     <color name="accent">#FF5252</color>
+     <color name="primary_text">#212121</color>
+     <color name="secondary_text">#757575</color>
+-    <color name="icons">#FFFFFF</color>
++    <color name="icons">#ffffff</color>
+     <color name="divider">#BDBDBD</color>
+ </resources>
+Index: app/src/main/res/layout/fragment_direction.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/fragment_direction.xml	(revision )
++++ app/src/main/res/layout/fragment_direction.xml	(revision )
+@@ -0,0 +1,22 @@
++<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
++    xmlns:app="http://schemas.android.com/apk/res-auto"
++    xmlns:tools="http://schemas.android.com/tools"
++    android:layout_width="match_parent"
++    android:layout_height="match_parent"
++    tools:context="daym3l.photobook.com.photobook.about.DirectionFragment">
++
++
++    <LinearLayout
++        android:layout_width="match_parent"
++        android:layout_height="match_parent"
++        android:background="@color/colorPrimary"
++        android:orientation="vertical">
++
++        <uk.co.senab.photoview.PhotoView
++            android:id="@+id/image"
++            android:layout_width="match_parent"
++            android:layout_height="match_parent"
++            android:scaleType="centerCrop"
++            app:srcCompat="@drawable/direccion" />
++    </LinearLayout>
++</FrameLayout>
+Index: app/src/main/res/layout/activity_splash.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_splash.xml	(date 1542332250000)
++++ app/src/main/res/layout/activity_splash.xml	(revision )
+@@ -45,32 +45,22 @@
+         tools:layout_constraintLeft_creator="1"
+         tools:layout_constraintTop_creator="1" />
+ 
+-
+-    <com.ebanx.swipebtn.SwipeButton
+-        android:id="@+id/swbtn_init"
+-        android:layout_width="match_parent"
++    <android.support.design.widget.FloatingActionButton
++        android:id="@+id/fab_gotoalbum"
++        android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginBottom="8dp"
+-        android:layout_marginLeft="20dp"
+-        android:layout_marginRight="20dp"
++        android:layout_marginLeft="8dp"
++        android:layout_marginRight="8dp"
+         android:layout_marginTop="8dp"
+-        app:inner_text="@string/fot"
+-        app:inner_text_color="@android:color/white"
+-        app:inner_text_background="@drawable/shape_rounded"
+-        app:inner_text_size="16dp"
+-        app:inner_text_bottom_padding="18dp"
+-        app:inner_text_top_padding="18dp"
++        android:clickable="true"
++        app:backgroundTint="@color/colorPrimary"
++        app:fabSize="normal"
+         app:layout_constraintBottom_toBottomOf="@+id/iv_backGround"
+         app:layout_constraintLeft_toLeftOf="parent"
+         app:layout_constraintRight_toRightOf="parent"
+         app:layout_constraintTop_toBottomOf="@+id/frameLayout"
+-        app:button_image_enabled="@drawable/ic_mood_black_24dp"
+-        app:button_image_disabled="@drawable/ic_arrow_forward_black_24dp"
+-        app:button_left_padding="20dp"
+-        app:button_right_padding="20dp"
+-        app:button_top_padding="20dp"
+-        app:button_bottom_padding="20dp"
+-        app:button_background="@drawable/shape_button"/>
++        app:srcCompat="@drawable/ic_halloween_black_cat" />
+ 
+ 
+ </android.support.constraint.ConstraintLayout>
+Index: app/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/build.gradle	(date 1542332250000)
++++ app/build.gradle	(revision )
+@@ -24,6 +24,7 @@
+ 
+ dependencies {
+     compile fileTree(include: ['*.jar'], dir: 'libs')
++    compile project(':MaterialDialogs')
+     compile 'com.github.bumptech.glide:glide:3.7.0'
+     compile 'com.android.support:appcompat-v7:25.3.1'
+     compile 'com.ebanx:swipe-button:0.7.0'
+@@ -32,5 +33,4 @@
+     compile 'com.android.support.constraint:constraint-layout:1.0.0'
+     compile 'com.android.support:design:25.3.1'
+     compile 'com.android.support:support-v4:25.3.1'
+-    compile project(':MaterialDialogs')
+ }
+Index: app/src/main/res/anim/fade_out.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/anim/fade_out.xml	(date 1542332250000)
++++ app/src/main/res/anim/fade_out.xml	(revision )
+@@ -1,7 +1,7 @@
+ <?xml version="1.0" encoding="utf-8"?>
+ <set xmlns:android="http://schemas.android.com/apk/res/android">
+     <alpha
+-        android:duration="1500"
++        android:duration="1000"
+         android:fromAlpha="0"
+         android:toAlpha="1"></alpha>
+ </set>
+\ No newline at end of file
+Index: app/src/main/java/daym3l/photobook/com/photobook/about/AboutUsActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/daym3l/photobook/com/photobook/about/AboutUsActivity.java	(date 1542332250000)
++++ app/src/main/java/daym3l/photobook/com/photobook/about/AboutUsActivity.java	(revision )
+@@ -2,6 +2,9 @@
+ 
+ import android.content.Intent;
+ import android.net.Uri;
++import android.support.v4.app.Fragment;
++import android.support.v4.app.FragmentManager;
++import android.support.v4.app.FragmentTransaction;
+ import android.support.v7.app.AppCompatActivity;
+ import android.os.Bundle;
+ import android.view.View;
+@@ -23,7 +26,6 @@
+         LinearLayout direccion = (LinearLayout) findViewById(R.id.ll_direccion);
+ 
+ 
+-
+         correo.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+@@ -57,10 +59,25 @@
+     }
+ 
+     private void mostrarDireccion() {
+-        MaterialDialog materialDialog = new MaterialDialog(AboutUsActivity.this)
+-                .setTitle("Estamos Aquí")
+-                .setCanceledOnTouchOutside(true)
+-                .setContentView(R.layout.dir_layout);
+-        materialDialog.show();
++        fragmentGestor(new DirectionFragment(), "direction");
++
++    }
++
++    private void fragmentGestor(Fragment fragment, String tag) {
++
++        Fragment containerFragment = getSupportFragmentManager().findFragmentByTag(tag);
++        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
++        if (containerFragment == null) {
++            fragmentTransaction.add(R.id.fr_about, fragment, tag);
++            fragmentTransaction.addToBackStack(tag);
++            fragmentTransaction.commit();
++
++        } else if (!tag.equals(containerFragment.getTag()) || tag.equals(containerFragment.getTag())) {
++            fragmentTransaction.replace(R.id.fr_about, fragment, tag);
++            fragmentTransaction.addToBackStack(tag);
++            fragmentTransaction.commit();
++
++        }
++
+     }
+ }
+\ No newline at end of file
+Index: app/src/main/res/anim/fade.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/anim/fade.xml	(date 1542332250000)
++++ app/src/main/res/anim/fade.xml	(revision )
+@@ -3,7 +3,7 @@
+     <alpha
+         android:fromAlpha="2"
+         android:toAlpha="1"
+-        android:duration="1500" >
++        android:duration="1000" >
+     </alpha>
+ 
+ 
+\ No newline at end of file

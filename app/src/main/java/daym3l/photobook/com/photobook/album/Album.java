@@ -32,6 +32,7 @@ import android.widget.RelativeLayout;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -115,31 +116,7 @@ public class Album extends AppCompatActivity implements PopupMenu.OnMenuItemClic
         setImagesData();
         inflateThumbnails();
 
-        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-                BitmapDrawable bd = (BitmapDrawable) Album.this.getResources().getDrawable(sliderImagesId[position]);
-                double imageHeight = bd.getBitmap().getHeight();
-                double imageWidth = bd.getBitmap().getWidth();
-                if(imageWidth>imageHeight){
-                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-                }else {
-                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-                }
-
-
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
-        });
 
         share.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -169,11 +146,15 @@ public class Album extends AppCompatActivity implements PopupMenu.OnMenuItemClic
 
         image.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
         File f = new File(Environment.getExternalStorageDirectory() + File.separator + "temporary_file.jpg");
-
+        FileOutputStream fos = null;
         try {
             f.createNewFile();
-            FileOutputStream fo = new FileOutputStream(f);
-            fo.write(bytes.toByteArray());
+            fos = new FileOutputStream(f);
+            image.compress(Bitmap.CompressFormat.JPEG, 100, fos);
+            fos.flush();
+            fos.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }

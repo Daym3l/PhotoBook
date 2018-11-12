@@ -24,6 +24,7 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile project(':MaterialDialogs')
     compile 'com.github.bumptech.glide:glide:3.7.0'
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.ebanx:swipe-button:0.7.0'
@@ -32,5 +33,4 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.0'
     compile 'com.android.support:design:25.3.1'
     compile 'com.android.support:support-v4:25.3.1'
-    compile project(':MaterialDialogs')
 }

@@ -3,7 +3,7 @@
     <alpha
         android:fromAlpha="2"
         android:toAlpha="1"
-        android:duration="1500" >
+        android:duration="1000" >
     </alpha>
 
 
