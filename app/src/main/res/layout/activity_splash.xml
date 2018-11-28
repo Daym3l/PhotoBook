@@ -44,34 +44,30 @@
         tools:layout_constraintLeft_creator="1"
         tools:layout_constraintTop_creator="1" />
 
-
-    <com.ebanx.swipebtn.SwipeButton
-        android:id="@+id/swbtn_init"
-        android:layout_width="match_parent"
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_gotoalbum"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
-        app:inner_text="@string/fot"
-        app:inner_text_color="@android:color/white"
-        app:inner_text_background="@drawable/shape_rounded"
-        app:inner_text_size="16dp"
-        app:inner_text_bottom_padding="18dp"
-        app:inner_text_top_padding="18dp"
+        android:clickable="true"
+        app:backgroundTint="@color/colorPrimary"
+        app:button_background="@drawable/shape_button"
+        app:button_bottom_padding="20dp"
+        app:button_image_disabled="@drawable/ic_arrow_forward_black_24dp"
+        app:button_image_enabled="@drawable/ic_mood_black_24dp"
+        app:button_left_padding="20dp"
+        app:button_right_padding="20dp"
+        app:button_top_padding="20dp"
+        app:fabSize="normal"
         app:layout_constraintBottom_toBottomOf="@+id/iv_backGround"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/frameLayout"
-        app:button_image_enabled="@drawable/ic_mood_black_24dp"
-        app:button_image_disabled="@drawable/ic_arrow_forward_black_24dp"
-        app:button_left_padding="20dp"
-        app:button_right_padding="20dp"
-        app:button_top_padding="20dp"
-        app:button_bottom_padding="20dp"
-        app:button_background="@drawable/shape_button"
 
-        />
+        app:srcCompat="@drawable/logo_tbmos" />
 
 
 </android.support.constraint.ConstraintLayout>

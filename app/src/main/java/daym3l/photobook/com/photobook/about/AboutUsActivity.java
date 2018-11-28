@@ -2,6 +2,8 @@ package daym3l.photobook.com.photobook.about;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -62,10 +64,25 @@ public class AboutUsActivity extends AppCompatActivity {
     }
 
     private void mostrarDireccion() {
-        MaterialDialog materialDialog = new MaterialDialog(AboutUsActivity.this)
-                .setTitle("Estamos Aquí")
-                .setCanceledOnTouchOutside(true)
-                .setContentView(R.layout.dir_layout);
-        materialDialog.show();
+        fragmentGestor(new DirectionFragment(), "direction");
+
+    }
+
+    private void fragmentGestor(Fragment fragment, String tag) {
+
+        Fragment containerFragment = getSupportFragmentManager().findFragmentByTag(tag);
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        if (containerFragment == null) {
+            fragmentTransaction.add(R.id.fr_about, fragment, tag);
+            fragmentTransaction.addToBackStack(tag);
+            fragmentTransaction.commit();
+
+        } else if (!tag.equals(containerFragment.getTag()) || tag.equals(containerFragment.getTag())) {
+            fragmentTransaction.replace(R.id.fr_about, fragment, tag);
+            fragmentTransaction.addToBackStack(tag);
+            fragmentTransaction.commit();
+
+        }
+
     }
 }

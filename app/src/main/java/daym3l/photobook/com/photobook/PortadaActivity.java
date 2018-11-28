@@ -52,7 +52,6 @@ public class PortadaActivity extends AppCompatActivity {
         puffInAnimation.animate();
 
 
-
         portada.startAnimation(myAnim);
 
 
