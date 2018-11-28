@@ -9,31 +9,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89adb189-ef1a-4ac7-9f0f-c9e6fc5ac796" name="Default" comment="asd">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-nodpi/image1.jpg" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-nodpi/image1.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-nodpi/image10.jpg" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-nodpi/image10.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-nodpi/image11.jpg" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-nodpi/image11.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-nodpi/image12.jpg" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-nodpi/image12.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-nodpi/image13.jpg" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-nodpi/image13.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-nodpi/image14.jpg" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-nodpi/image14.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-nodpi/image15.jpg" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-nodpi/image15.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-nodpi/image16.jpg" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-nodpi/image16.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-nodpi/image17.jpg" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-nodpi/image17.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-nodpi/image18.jpg" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-nodpi/image18.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-nodpi/image2.jpg" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-nodpi/image2.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-nodpi/image3.jpg" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-nodpi/image3.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-nodpi/image4.jpg" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-nodpi/image4.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-nodpi/image5.jpg" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-nodpi/image5.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-nodpi/image6.jpg" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-nodpi/image6.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-nodpi/image7.jpg" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-nodpi/image7.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable-nodpi/image9.jpg" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-nodpi/image9.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/daym3l/photobook/com/photobook/PortadaActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/daym3l/photobook/com/photobook/PortadaActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/daym3l/photobook/com/photobook/about/AboutUsActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/daym3l/photobook/com/photobook/about/AboutUsActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-    </list>
+    <list default="true" id="89adb189-ef1a-4ac7-9f0f-c9e6fc5ac796" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/build/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -3406,7 +3382,14 @@
       <option name="project" value="LOCAL" />
       <updated>1542063814198</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="asd">
+      <created>1543373167782</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1543373167782</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -3461,7 +3444,8 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="as" />
-    <option name="LAST_COMMIT_MESSAGE" value="as" />
+    <MESSAGE value="asd" />
+    <option name="LAST_COMMIT_MESSAGE" value="asd" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
