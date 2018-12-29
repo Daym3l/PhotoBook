@@ -85,8 +85,6 @@ public class Album extends AppCompatActivity implements PopupMenu.OnMenuItemClic
                 int orientacion = getResources().getConfiguration().orientation;
                 if (orientacion == Configuration.ORIENTATION_LANDSCAPE) {
                     fThumbs.setVisibility(View.GONE);
-                } else {
-                    fThumbs.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -98,6 +96,18 @@ public class Album extends AppCompatActivity implements PopupMenu.OnMenuItemClic
         verticalFlipTransformation = new VerticalFlipTransformation();
         gateTransformation = new GateTransformation();
         fadeOutTransformation = new FadeOutTransformation();
+
+        ImageView hideFrame = (ImageView) findViewById(R.id.iv_openlist);
+        hideFrame.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (fThumbs.getVisibility() == View.VISIBLE) {
+                    fThumbs.setVisibility(View.GONE);
+                } else {
+                    fThumbs.setVisibility(View.VISIBLE);
+                }
+            }
+        });
 
         images = new ArrayList<>();
         share = (ImageView) findViewById(R.id.iv_share);

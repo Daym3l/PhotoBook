@@ -40,6 +40,15 @@
                 app:srcCompat="@drawable/ic_share" />
 
             <ImageView
+                android:id="@+id/iv_openlist"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/iv_share"
+                android:layout_toRightOf="@+id/iv_share"
+                app:srcCompat="@drawable/ic_collections_black_24dp" />
+
+            <ImageView
                 android:id="@+id/iv_options"
                 android:layout_width="45dp"
                 android:layout_height="28dp"
