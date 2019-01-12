@@ -10,8 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="89adb189-ef1a-4ac7-9f0f-c9e6fc5ac796" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/EasyAndroidAnimations_0_8.xml" afterPath="$PROJECT_DIR$/.idea/libraries/EasyAndroidAnimations_0_8.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/PhotoView_1_2_7.xml" afterPath="$PROJECT_DIR$/.idea/libraries/PhotoView_1_2_7.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/swipe_button_0_7_0.xml" afterPath="$PROJECT_DIR$/.idea/libraries/swipe_button_0_7_0.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradle.properties" afterPath="$PROJECT_DIR$/gradle.properties" />
     </list>
     <ignored path="$PROJECT_DIR$/build/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -47,7 +53,7 @@
       <file leaf-file-name="Album.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/daym3l/photobook/com/photobook/album/Album.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2772">
+            <state relative-caret-position="2728">
               <caret line="174" column="102" selection-start-line="174" selection-start-column="102" selection-end-line="174" selection-end-column="102" />
               <folding />
             </state>
@@ -64,21 +70,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+            <state relative-caret-position="682">
+              <caret line="31" column="48" selection-start-line="31" selection-start-column="48" selection-end-line="31" selection-end-column="48" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gradle.properties" pinned="false" current-in-tab="false">
+      <file leaf-file-name="gradle.properties" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gradle.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+            <state relative-caret-position="330">
+              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -531,11 +537,6 @@
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="compileReleaseAidl" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
-                <option name="description" value="Prepare com.github.chrisbanes:PhotoView:1.2.7" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="prepareComGithubChrisbanesPhotoView127Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="description" value="Runs lint on the Release build." />
@@ -1556,11 +1557,6 @@
                 <option name="name" value="compileReleaseAidl" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Prepare com.github.chrisbanes:PhotoView:1.2.7" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
-                <option name="name" value="prepareComGithubChrisbanesPhotoView127Library" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
                 <option name="description" value="Runs lint on the Release build." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
                 <option name="name" value="lintRelease" />
@@ -2376,7 +2372,8 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="D:\Daymel\Documents\DESARROLLO\www\ANDROID\AndroidStudioProjects\PhotoBook" value="7718336465644" />
+        <entry key="$PROJECT_DIR$" value="7718903845619" />
+        <entry key="D:\Daymel\Documents\DESARROLLO\www\ANDROID\AndroidStudioProjects\PhotoBook" value="7718904731115" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -2765,7 +2762,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1932" />
+    <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -2812,6 +2809,9 @@
             </PATH_ELEMENT>
           </PATH>
         </subPane>
+      </pane>
+      <pane id="AndroidView">
+        <subPane />
       </pane>
       <pane id="ProjectPane">
         <subPane>
@@ -2935,9 +2935,6 @@
       </pane>
       <pane id="Scratches" />
       <pane id="PackagesPane" />
-      <pane id="AndroidView">
-        <subPane />
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2948,7 +2945,7 @@
     <property name="ExportApk.BuildType" value="release" />
     <property name="ExportApk.SignV1" value="true" />
     <property name="SearchEverywhereHistoryKey" value="string&#9;FILE&#9;file://D:/Daymel/Documents/DESARROLLO/www/ANDROID/AndroidStudioProjects/PhotoBook/app/src/main/res/values/strings.xml&#10;mani&#9;FILE&#9;file://D:/Daymel/Documents/DESARROLLO/www/ANDROID/AndroidStudioProjects/PhotoBook/app/src/main/AndroidManifest.xml" />
-    <property name="settings.editor.selected.configurable" value="http.proxy" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="show.do.not.copy.http.proxy.settings.to.gradle" value="true" />
   </component>
@@ -3298,7 +3295,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1932" height="1056" extended-state="1" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -3308,19 +3305,19 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48997772" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20192307" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20149253" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -3712,7 +3709,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/daym3l/photobook/com/photobook/album/Album.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2772">
+        <state relative-caret-position="2728">
           <caret line="174" column="102" selection-start-line="174" selection-start-column="102" selection-end-line="174" selection-end-column="102" />
           <folding />
         </state>
@@ -3745,14 +3742,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gradle.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -3763,8 +3752,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+        <state relative-caret-position="682">
+          <caret line="31" column="48" selection-start-line="31" selection-start-column="48" selection-end-line="31" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gradle.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>
