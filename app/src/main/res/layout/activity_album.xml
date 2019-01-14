@@ -44,9 +44,21 @@
                 android:layout_width="28dp"
                 android:layout_height="28dp"
                 android:layout_alignParentTop="true"
+                android:layout_marginEnd="12dp"
+                android:layout_marginRight="12dp"
                 android:layout_toEndOf="@+id/iv_share"
                 android:layout_toRightOf="@+id/iv_share"
                 app:srcCompat="@drawable/ic_collections_black_24dp" />
+
+            <ImageView
+                android:id="@+id/iv_scren"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@+id/iv_openlist"
+                android:layout_toRightOf="@+id/iv_openlist"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/ic_screen_rotation" />
 
             <ImageView
                 android:id="@+id/iv_options"

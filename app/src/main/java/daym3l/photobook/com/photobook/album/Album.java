@@ -58,7 +58,6 @@ public class Album extends AppCompatActivity implements PopupMenu.OnMenuItemClic
     private LinearLayout thumbnailsContainer;
     private ViewPager mViewPager;
     private FrameLayout fThumbs;
-    private ImageView share, menuOption;
 
 
     CubeInRotationTransformation cubeInRotationTransformation;
@@ -76,7 +75,7 @@ public class Album extends AppCompatActivity implements PopupMenu.OnMenuItemClic
         setContentView(R.layout.activity_album);
         final int[] sliderImagesId = _ImagesConst.IMAGES_SLIDER;
 
-        RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.rl_container);
+        final RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.rl_container);
         fThumbs = (FrameLayout) findViewById(R.id.frame_thumb);
 
         relativeLayout.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
@@ -97,6 +96,7 @@ public class Album extends AppCompatActivity implements PopupMenu.OnMenuItemClic
         gateTransformation = new GateTransformation();
         fadeOutTransformation = new FadeOutTransformation();
 
+
         ImageView hideFrame = (ImageView) findViewById(R.id.iv_openlist);
         hideFrame.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -110,14 +110,26 @@ public class Album extends AppCompatActivity implements PopupMenu.OnMenuItemClic
         });
 
         images = new ArrayList<>();
-        share = (ImageView) findViewById(R.id.iv_share);
-        menuOption = (ImageView) findViewById(R.id.iv_options);
+        ImageView share = (ImageView) findViewById(R.id.iv_share);
+        ImageView menuOption = (ImageView) findViewById(R.id.iv_options);
+        final ImageView rotate = (ImageView) findViewById(R.id.iv_scren);
         fThumbs = (FrameLayout) findViewById(R.id.frame_thumb);
         mViewPager = (ViewPager) findViewById(R.id.viewPageAndroid);
         RelativeLayout contenedor = (RelativeLayout) findViewById(R.id.rl_container);
         Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fade);
         contenedor.startAnimation(animation);
         thumbnailsContainer = (LinearLayout) findViewById(R.id.container);
+        rotate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int orientacion = getResources().getConfiguration().orientation;
+                if (orientacion == Configuration.ORIENTATION_LANDSCAPE) {
+                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+                } else {
+                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+                }
+            }
+        });
 
         AndroidImageAdapter adapterView = new AndroidImageAdapter(this);
         mViewPager.setAdapter(adapterView);
@@ -126,6 +138,39 @@ public class Album extends AppCompatActivity implements PopupMenu.OnMenuItemClic
         setImagesData();
         inflateThumbnails();
 
+        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                BitmapDrawable bd = (BitmapDrawable) Album.this.getResources().getDrawable(sliderImagesId[position]);
+                double imageHeight = bd.getBitmap().getHeight();
+                double imageWidth = bd.getBitmap().getWidth();
+                int orientacion = getResources().getConfiguration().orientation;
+                if (orientacion == Configuration.ORIENTATION_LANDSCAPE) {
+                    if (imageHeight > imageWidth) {
+                        rotate.setVisibility(View.VISIBLE);
+                    } else {
+                        rotate.setVisibility(View.GONE);
+                    }
+
+                } else {
+                    if (imageWidth > imageHeight) {
+                        rotate.setVisibility(View.VISIBLE);
+                    } else {
+                        rotate.setVisibility(View.GONE);
+                    }
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
 
 
         share.setOnClickListener(new View.OnClickListener() {
